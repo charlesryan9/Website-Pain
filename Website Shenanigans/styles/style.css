@@ -1,0 +1,478 @@
+/* ====== COLOR PALETTE ====== */
+:root {
+  /* TEXT & LINKS */
+  --primary-color: #1B1B1D;       /* deep black for headings & links */
+  --text-color: #1B1B1D;          /* deep black for body text */
+
+  /* BACKGROUNDS */
+  --background-color: #E8EEF5;    /* very light pastel blue-gray */
+  --card-bg-color: #FFFFFF;       /* white for cards/sections */
+
+  /* ACCENTS & BUTTONS */
+  --accent-color: #A8C0D8;        /* pastel blue-gray accent */
+  --btn-hover-color: #7D9AB1;     /* slightly darker accent on hover */
+
+  /* LAYOUT */
+  --max-width: 1200px;
+}
+
+/* ====== GLOBAL RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ====== UTILITY CLASSES ====== */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.primary-btn {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+  background: url("../images/banner.jpg") no-repeat center center/cover;
+  color: #ffffff;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ====== ABOUT SECTION ====== */
+.about {
+  padding: 4rem 0;
+  background-color: var(--card-bg-color);
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  text-align: center;
+}
+
+/* ====== SERVICES SECTION ====== */
+.services {
+  padding: 4rem 0;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  flex: 1;
+  margin: 0 1rem 1rem;
+}
+
+.card .btn {
+  margin: 0 1rem 1rem;
+  align-self: start;
+}
+
+/* ====== CALL TO ACTION ====== */
+.cta {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ====== CONTACT SECTION ====== */
+.contact {
+  padding: 4rem 0;
+  background-color: var(--card-bg-color);
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: var(--text-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* ====== FORM ERROR MESSAGES ====== */
+.error-message {
+  color: var(--accent-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* ====== FOOTER ====== */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0 2rem;
+  /* Use your image here: */
+  background: url('../images/footer-bg.jpg') no-repeat center/cover;
+  color: #fff;
+}
+
+.site-footer .footer-overlay {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.site-footer .footer-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.site-footer .footer-column {
+  flex: 1 1 30%;
+  min-width: 200px;
+}
+
+.site-footer .footer-column h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer .footer-column a,
+.site-footer .footer-column p {
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.site-footer .footer-center {
+  text-align: center;
+}
+
+.site-footer .footer-icon {
+  width: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer .footer-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer .social-links {
+  margin-bottom: 1rem;
+}
+
+.site-footer .social-links a {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.site-footer .social-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Subscribe button override */
+.site-footer .subscribe-btn {
+  background-color: var(--accent-color);
+}
+
+.site-footer .subscribe-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Footer Curve */
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 50px;         /* height = 2× the radius you want */
+  background: #fff;  /* re-uses the same background image */
+  border-radius: 0 0 70% 70% / 0 0 130% 130%;
+  z-index: 2;            /* sits above the footer’s bg, under the overlay */
+}
+
+.site-footer .footer-content,
+.site-footer .footer-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    background-color: #ffffff;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links li {
+    border-top: 1px solid #eeeeee;
+  }
+
+  .nav-links li:first-child {
+    border-top: none;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .site-footer .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-footer .footer-column {
+    flex: 1 1 100%;
+  }
+
+}
+
+/* ====== LINK HOVER OVERRIDES ====== */
+.nav-links li a:hover,
+.footer-links li a:hover,
+.site-footer .social-links a:hover {
+  color: var(--accent-color);
+}
